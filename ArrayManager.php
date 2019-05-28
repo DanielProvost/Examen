@@ -13,27 +13,27 @@ class ArrayManager{
     }
 
     public function setList($ListeEntier){
-        return $this->ListeEntier;
+        $this->ListeEntier=$ListeEntier;
     }
 
-    public function PlusPetitNombreTrouver($ListeEntier){
+    public function PlusPetitNombreTrouver(){
 
         $nombre = 0;
         $nombrePlusPetit =0;
-        $tailleTableau = count($ListeEntier);
+        $tailleTableau = count($this->ListeEntier);
 
 
         for($i=0 ; $i< $tailleTableau; $i+=1){
-            $nombre = $ListeEntier[$i];
+            $nombre = $this->ListeEntier[$i];
             if ($i == 0){
                 $nombrePlusPetit = $nombre;
             }
-            if ($nombre > $nombrePlusPetit){
+            if ($nombre < $nombrePlusPetit){
                 $nombrePlusPetit = $nombre;
             }
         }
-        return $this->nombrePlusPetit=$nombrePlusPetit;
+        return $nombrePlusPetit;
     }
-
-
 }
+
+
